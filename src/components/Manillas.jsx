@@ -4,6 +4,41 @@ import { collection, doc, addDoc, onSnapshot, deleteDoc, updateDoc  } from 'fire
 
 const Manillas = () => {
 
+    function calcular(){
+            let material = document.getElementById("material").value;
+            let tipo= document.getElementById("tipo").value;
+            let dije= document.getElementById("dije").value;
+            let cantidad= document.getElementById("cantidad").value;
+            let divisa= document.getElementById("divisa").value;
+
+            if((material=='Cuero')&&(dije=='Martillo')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
+                console.log(1);
+            }else if((material=='Cuero')&&(dije=='Martillo')&&(tipo=='Plata')){
+                console.log(2);
+            }else if((material=='Cuero')&&(dije=='Martillo')&&(tipo=='Niquel')){
+                console.log(3);
+            }else if((material=='Cuero')&&(dije=='Ancla')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
+                console.log(4);
+            }else if((material=='Cuero')&&(dije=='Ancla')&&(tipo=='Plata')){
+                console.log(5);
+            }else if((material=='Cuero')&&(dije=='Ancla')&&(tipo=='Niquel')){
+                console.log(6);
+            }else if((material=='Cuerda')&&(dije=='Martillo')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
+                console.log(7);
+            }else if((material=='Cuerda')&&(dije=='Martillo')&&(tipo=='Plata')){
+                console.log(8);
+            }else if((material=='Cuerda')&&(dije=='Martillo')&&(tipo=='Niquel')){
+                console.log(9);
+            }else if((material=='Cuerda')&&(dije=='Ancla')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
+                console.log(10);
+            }else if((material=='Cuerda')&&(dije=='Ancla')&&(tipo=='Plata')){
+                console.log(11);
+            }else if((material=='Cuerda')&&(dije=='Ancla')&&(tipo=='Niquel')){
+                console.log(12);
+            }
+
+    }
+
   return (
    <div>
      <section>
@@ -32,55 +67,46 @@ const Manillas = () => {
       </section>
      <section className='section2'>
           <div className='row'>
+
               <div className='col-2'>
-                 <form action="#">
                       <h3 className='text-center'>Material</h3>
-                     <select name="Material" id="lang">
+                     <select name="Material" id="material">
                          <option value="Cuero">Cuero</option>
                          <option value="Cuerda">Cuerda</option>
                      </select>
-                 </form>
               </div>
  
               <div className='col-2'>
-                   <form action="#">
                      <h3 className='text-center'>Dije</h3>
-                     <select name="Dije" id="lang">
+                     <select name="Dije" id="dije">
                          <option value="Martillo">Martillo</option>
                          <option value="Ancla">Ancla</option>
                      </select>
-                 </form>
               </div>
               <div className='col-md-2'>
-                 <form action="#">
                      <h3 className='text-center'>Tipo</h3>
-                     <select name="Tipo" id="lang">
+                     <select name="Tipo" id="tipo">
                          <option value="Oro">Oro</option>
                          <option value="Oro Rosado">Oro Rosado</option>
                          <option value="Plata">Plata</option>
                          <option value="Niquel">Niquel</option>
                      </select>
-                  </form>
               </div>
               <div className='col-md-2'>
-                 <form action="#">
                      <h3 className='text-center'>Cantidad</h3>
-                     <input className='input1' type="number" id="tentacles" name="tentacles" min="1" max="99999">
+                     <input className='input1' type="number" id="cantidad" name="tentacles" min="1" max="99999">
                      </input>
-                  </form>
               </div>
               <div className='col-2'>
-                 <form action="#">
                      <h3 className='text-center'>Divisa</h3>
-                     <select name="Divisa" id="lang">
+                     <select name="Divisa" id="divisa">
                          <option value="Pesos">Pesos</option>
                          <option value="Dolares">Dólar</option>
                      </select>
-                  </form>
              </div>
           </div>
       </section>
-      <input type="submit" value="Consultar" className='col-1'/>
+      <button type='submit' onClick={()=>calcular()} className='btn btn-primary'>Consultar</button>
    </div>
   )
 
