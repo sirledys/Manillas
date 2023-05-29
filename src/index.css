@@ -1,11 +1,21 @@
 body {
-    display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    margin: 10px;
+    margin-top: 20px;
     background-color: #ffffff;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+h1 {
+    font-family: fantasy;
+    color: rgb(80, 15, 77);
+}
+
+h3 {
+    margin-top: 50px;
+    margin-left: 10px;
 }
 
 input {
@@ -15,8 +25,15 @@ input {
     margin: 0 auto;
 }
 
+.input1 {
+    margin-top: 15px;
+}
+
+.section2 {
+    margin-left: 90px;
+}
+
 select {
-    margin-bottom: 10px;
     margin-top: 10px;
     margin-bottom: 100px;
     margin-left: 40px;
