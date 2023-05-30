@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 
 const Manillas = () => {
 
-    function calcular(){
+    async function calcular(){
             let material = document.getElementById("material").value;
             let tipo= document.getElementById("tipo").value;
             let dije= document.getElementById("dije").value;
@@ -15,51 +15,63 @@ const Manillas = () => {
             if((material=='Cuero')&&(dije=='Martillo')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
                 let precio = 100*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Martillo')&&(tipo=='Plata')){
                 let precio = 80*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Martillo')&&(tipo=='Niquel')){
                 let precio = 70*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Ancla')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
                 let precio = 120*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Ancla')&&(tipo=='Plata')){
                 let precio = 100*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Ancla')&&(tipo=='Niquel')){
                 let precio = 90*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Martillo')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
                 let precio = 90*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Martillo')&&(tipo=='Plata')){
                 let precio = 70*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Martillo')&&(tipo=='Niquel')){
                 let precio = 50*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Ancla')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
                 let precio = 110*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Ancla')&&(tipo=='Plata')){
                 let precio = 90*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Ancla')&&(tipo=='Niquel')){
                 let precio = 80*cantidad;
                 precio=conversionDivisa(precio,divisa);
-                Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
+                Swal.fire('Gracias por consultar','El valor a pagar es: '+precio, 'success');
+            }
+
+            try{
+                const data = await addDoc(collection(db, 'consultas'),{
+                    Material:material,
+                    Tipo:tipo,
+                    Dije:dije,
+                    Cantidad:cantidad,
+                    Divisa:divisa
+                })
+            }catch(error){
+                console.error(error);
             }
 
     }
