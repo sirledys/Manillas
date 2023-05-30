@@ -14,42 +14,63 @@ const Manillas = () => {
 
             if((material=='Cuero')&&(dije=='Martillo')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
                 let precio = 100*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Martillo')&&(tipo=='Plata')){
                 let precio = 80*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Martillo')&&(tipo=='Niquel')){
                 let precio = 70*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Ancla')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
                 let precio = 120*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Ancla')&&(tipo=='Plata')){
                 let precio = 100*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuero')&&(dije=='Ancla')&&(tipo=='Niquel')){
                 let precio = 90*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Martillo')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
                 let precio = 90*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Martillo')&&(tipo=='Plata')){
                 let precio = 70*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Martillo')&&(tipo=='Niquel')){
                 let precio = 50*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Ancla')&&((tipo=='Oro')||(tipo=='Oro Rosado'))){
                 let precio = 110*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Ancla')&&(tipo=='Plata')){
                 let precio = 90*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }else if((material=='Cuerda')&&(dije=='Ancla')&&(tipo=='Niquel')){
                 let precio = 80*cantidad;
+                precio=conversionDivisa(precio,divisa);
                 Swal.fire('Precio calculado','El valor a pagar es: '+precio, 'success');
             }
 
+    }
+
+    function conversionDivisa(cantidad, divisa){
+
+        if(divisa=='Pesos'){
+            cantidad = cantidad*5000
+        }
+
+        return cantidad;
     }
 
   return (
@@ -79,7 +100,7 @@ const Manillas = () => {
          </div>
       </section>
      <section className='section2'>
-          <div className='row'>
+          <div className='row '>
 
               <div className='col-2'>
                       <h3 className='text-center'>Material</h3>
@@ -119,7 +140,12 @@ const Manillas = () => {
              </div>
           </div>
       </section>
-      <button type='submit' onClick={()=>calcular()} className='btn btn-primary'>Consultar</button>
+      <div className="row justify-content-center ">
+          <div className="col-auto">
+            <button type='submit' onClick={()=>calcular()} className='btn btn-primary '>Consultar</button>
+          </div>
+      </div>
+      
    </div>
   )
 
